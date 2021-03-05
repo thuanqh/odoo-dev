@@ -13,7 +13,8 @@ services:
       - ./data/postgresql:/var/lib/postgresql/data
   web:
     image: odoo:latest
-    depend_on: -db
+    depends_on:
+      - db
     ports:
       - "8069:8069"
     tty: true
